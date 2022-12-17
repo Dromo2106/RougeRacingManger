@@ -1,11 +1,16 @@
 from appJar import gui
 import webbrowser
 import time
+import pyautogui
 
 # handle button events
 def press(button):
     if button == "OpenWeb":
         app.open_web("http://www.google.com")
+    if button == "Sigma":
+        pyautogui.hotkey('win')
+        pyautogui.sleep(1)
+        pyautogui.typewrite('your search query')
 
 app = gui("Login Window", "400x200")
 app.startTabbedFrame("MainMenu") 
